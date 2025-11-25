@@ -3,7 +3,7 @@ CREATE DATABASE locadora;
 USE locadora;
 
 CREATE TABLE cliente (
-    cliente_id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(55) NOT NULL,
     telefone VARCHAR(55) NOT NULL,
     email VARCHAR(55) NOT NULL,
@@ -11,13 +11,13 @@ CREATE TABLE cliente (
 );
 
 CREATE TABLE item (
-    item_id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(55) NOT NULL,
     categoria VARCHAR(55) NOT NULL
 );
 
 CREATE TABLE funcionario (
-    funcionario_id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(55) NOT NULL,
     cargo VARCHAR(55) NOT NULL
 );
@@ -29,9 +29,9 @@ CREATE TABLE aluguel (
     cliente_id INT NOT NULL,
     item_id INT NOT NULL,
     funcionario_id INT NOT NULL,
-    FOREIGN KEY (cliente_id) REFERENCES cliente(cliente_id),
-    FOREIGN KEY (item_id) REFERENCES item(item_id),
-    FOREIGN KEY (funcionario_id) REFERENCES funcionario(funcionario_id)
+    FOREIGN KEY (cliente_id) REFERENCES cliente(id),
+    FOREIGN KEY (item_id) REFERENCES item(id),
+    FOREIGN KEY (funcionario_id) REFERENCES funcionario(id)
 );
 
 INSERT INTO cliente (nome, telefone, email, cpf) VALUES
