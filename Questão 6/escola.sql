@@ -6,7 +6,7 @@ CREATE TABLE aluno (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(45) NOT NULL,
     data_nascimento VARCHAR(20) NOT NULL,
-    matricula INT NOT NULL
+    matricula INT NOT NULL UNIQUE
 );
 
 CREATE TABLE notas (

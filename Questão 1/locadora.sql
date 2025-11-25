@@ -5,9 +5,9 @@ USE locadora;
 CREATE TABLE cliente (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(55) NOT NULL,
-    telefone VARCHAR(55) NOT NULL,
-    email VARCHAR(55) NOT NULL,
-    cpf VARCHAR(55) NOT NULL
+    telefone VARCHAR(55) NOT NULL UNIQUE,
+    email VARCHAR(55) NOT NULL UNIQUE,
+    cpf VARCHAR(55) NOT NULL UNIQUE
 );
 
 CREATE TABLE item (
